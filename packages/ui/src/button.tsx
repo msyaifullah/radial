@@ -1,16 +1,46 @@
 import * as React from "react";
+import {ButtonProps} from "./button.types";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-}
+const buttonDefaultStyles = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContents: 'center',
+    border: 'none',
+    borderRadius: '4px',
+};
 
-export function Button({ children, ...other }: ButtonProps): JSX.Element {
-  return (
-    <button type="button" {...other}>
-      {children}
-    </button>
-  );
-}
+const buttonSizes = {
+    small: {
+        height: '28px',
+        fontSize: '14px',
+        padding: '3px 16px'
+    },
+    medium: {
+        height: '36px',
+        fontSize: '16px',
+        padding: '4px 20px'
+    },
+    large: {
+        height: '48px',
+        fontSize: '20px',
+        padding: '5px 24px'
+    },
+};
+
+const Button: React.FC<ButtonProps> = (props) => {
+    const {children, size = 'medium', ...rest} = props;
+    const buttonStyles = {
+        ...rest.style,
+        ...buttonDefaultStyles,
+        ...buttonSizes[size],
+    }
+    return (
+        <button style={buttonStyles} {...rest}>
+            {children}
+        </button>
+    );
+};
 
 Button.displayName = "Button";
+
+export {Button, type ButtonProps};

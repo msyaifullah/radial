@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "@msyaifullah/ui",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -27,7 +27,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com/@msyaifullah"
+    "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
     "@radix-ui/themes": "2.0.0-rc.3"

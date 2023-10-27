@@ -26,15 +26,15 @@ importers:
 
   apps/docs:
     dependencies:
+      '@msyaifullah/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       react:
         specifier: ^18.2.0
         version: 18.2.0
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
-      ui:
-        specifier: workspace:*
-        version: link:../../packages/ui
     devDependencies:
       '@storybook/addon-actions':
         specifier: ^7.4.0
@@ -91,7 +91,7 @@ importers:
         specifier: ^0.6.13
         version: 0.6.13(eslint@8.48.0)(typescript@5.2.2)
 
-  packages/theme:
+  packages/themes:
     dependencies:
       '@radix-ui/themes':
         specifier: 2.0.0-rc.3
@@ -9052,6 +9052,7 @@ packages:
 
   /loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
     dependencies:
       js-tokens: 4.0.0
 

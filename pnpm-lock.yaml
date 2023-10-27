@@ -91,6 +91,34 @@ importers:
         specifier: ^0.6.13
         version: 0.6.13(eslint@8.48.0)(typescript@5.2.2)
 
+  packages/theme:
+    dependencies:
+      '@radix-ui/themes':
+        specifier: 2.0.0-rc.3
+        version: 2.0.0-rc.3(@types/react-dom@18.0.9)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@types/react':
+        specifier: ^18.0.9
+        version: 18.0.26
+      '@types/react-dom':
+        specifier: ^18.0.4
+        version: 18.0.9
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../eslint-config-custom
+      react:
+        specifier: ^18.1.0
+        version: 18.2.0
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      tsup:
+        specifier: ^5.10.1
+        version: 5.12.9(typescript@5.2.2)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+
   packages/tsconfig: {}
 
   packages/ui:
@@ -3701,7 +3729,7 @@ packages:
       '@radix-ui/react-form': 0.0.3(@types/react-dom@18.0.9)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-hover-card': 1.0.7(@types/react-dom@18.0.9)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-popover': 1.0.7(@types/react-dom@18.0.9)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
-      '@radix-ui/react-portal': 1.0.3(@types/react-dom@18.0.9)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-portal': 1.0.4(@types/react-dom@18.0.9)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-radio-group': 1.1.3(@types/react-dom@18.0.9)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-scroll-area': 1.0.5(@types/react-dom@18.0.9)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-select': 1.2.2(@types/react-dom@18.0.9)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
@@ -11849,6 +11877,7 @@ packages:
   /typescript@5.2.2:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
+    hasBin: true
     dev: true
 
   /uglify-js@3.17.4:

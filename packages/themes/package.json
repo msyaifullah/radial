@@ -33,6 +33,6 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
-    "@radix-ui/themes": "2.0.0-rc.3"
+    "@msyaifullah/ui": "workspace:*"
   }
 }

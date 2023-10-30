@@ -1,15 +1,16 @@
-import * as React from "react";
-import {ButtonProps} from "./button.types";
+import * as React from "react"
+import {InputProps} from "./input.types";
 
-const buttonDefaultStyles = {
+
+const inputDefaultStyles = {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContents: 'center',
-    border: 'none',
     borderRadius: '4px',
+    height: '100px',
 };
 
-const buttonSizes = {
+const inputSizes = {
     small: {
         height: '28px',
         fontSize: '14px',
@@ -27,30 +28,26 @@ const buttonSizes = {
     },
 };
 
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({className, type, ...props}, ref) => {
-
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+    ({ className, type, ...props }, ref) => {
         const {children, variant = 'medium', ...rest} = props;
-        const buttonStyles = {
+        const inputStyles = {
             ...rest.style,
-            ...buttonDefaultStyles,
-            ...buttonSizes[variant],
+            ...inputDefaultStyles,
+            ...inputSizes[variant]
         }
         return (
-            <button
+            <input
                 ref={ref}
-                style={buttonStyles}
+                style={inputStyles}
                 type={type}
                 {...rest}
                 {...props}
-            >
-                {children}
-            </button>
+            />
         )
     }
 )
+Input.displayName = "Input"
 
-Button.displayName = "Button";
+export { Input, type InputProps }
 
-export {Button, type ButtonProps};

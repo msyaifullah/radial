@@ -13,7 +13,11 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@msyaifullah/ui": "workspace:*"
+    "@msyaifullah/hooks": "workspace:*",
+    "@msyaifullah/themes": "workspace:*",
+    "@msyaifullah/ui": "workspace:*",
+    "@msyaifullah/button": "workspace:*",
+    "@msyaifullah/input": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.4.0",

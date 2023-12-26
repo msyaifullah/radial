@@ -1,5 +1,5 @@
 {
-  "name": "@msyaifullah/themes",
+  "name": "@msyaifullah/input",
   "version": "0.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -25,14 +25,12 @@
     "eslint-config-custom": "workspace:*",
     "react": "^18.1.0",
     "tsconfig": "workspace:*",
+    "@msyaifullah/button": "workspace:*",
     "tsup": "^5.10.1",
     "typescript": "^5.2.2"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com/"
-  },
-  "dependencies": {
-    "@msyaifullah/ui": "workspace:*"
   }
 }

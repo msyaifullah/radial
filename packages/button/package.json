@@ -1,5 +1,5 @@
 {
-  "name": "@msyaifullah/themes",
+  "name": "@msyaifullah/button",
   "version": "0.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -31,8 +31,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com/"
-  },
-  "dependencies": {
-    "@msyaifullah/ui": "workspace:*"
   }
 }

@@ -28,6 +28,9 @@ const buttonSizes = {
 };
 
 
+/**
+ * Primary UI component for user interaction 
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({className, type, ...props}, ref) => {
 

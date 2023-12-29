@@ -1,19 +1,20 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import {Input} from "@msyaifullah/input";
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Input } from "@msyaifullah/input";
 
 const meta: Meta<typeof Input> = {
-    title: "Components/Input",
-    component: Input,
-    argTypes: {
-        type: {
-            control: {type: "radio"},
-            options: ["text", "password"]
-        },
-        variant: {
-            control: {type: "radio"},
-            options: ["small", "medium", "large"],
-        }
+  title: "Components/Input",
+  component: Input,
+  argTypes: {
+    type: {
+      control: { type: "radio" },
+      options: ["text", "password"],
     },
+    variant: {
+      control: { type: "radio" },
+      options: ["small", "medium", "large"],
+    },
+  },
 };
 
 export default meta;
@@ -26,23 +27,17 @@ type Story = StoryObj<typeof Input>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-    render: (props) => (
-        <Input
-            {...props}
-        >
-            {props.children}
-        </Input>
-    ),
-    name: "Input",
-    args: {
-        placeholder: "Placeholder Text",
-        type: "text",
-        variant: "small",
-        style: {
-            color: "blue",
-            border: "1px solid gray",
-            padding: 10,
-            borderRadius: 10,
-        },
+  render: (props) => <Input {...props}>{props.children}</Input>,
+  name: "Input",
+  args: {
+    placeholder: "Placeholder Text",
+    type: "text",
+    variant: "small",
+    style: {
+      color: "blue",
+      border: "1px solid gray",
+      padding: 10,
+      borderRadius: 10,
     },
+  },
 };

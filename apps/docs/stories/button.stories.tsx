@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "@msyaifullah/button";
+import { action } from "@storybook/addon-actions";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
@@ -14,6 +15,7 @@ const meta: Meta<typeof Button> = {
       control: { type: "radio" },
       options: ["small", "medium", "large"],
     },
+    onClick: { description: "button action", action: "onClick" },
   },
 };
 
@@ -31,16 +33,7 @@ type Story = StoryObj<typeof Button>;
  * Primary button is important for user interaction
  */
 export const Primary: Story = {
-  render: (props) => (
-    <Button
-      {...props}
-      onClick={(): void => {
-        console.log("Hello from primary!");
-      }}
-    >
-      {props.children}
-    </Button>
-  ),
+  render: (props) => <Button {...props}>{props.children}</Button>,
   name: "Primary",
   args: {
     children: "Hello",
@@ -52,6 +45,7 @@ export const Primary: Story = {
       padding: 10,
       borderRadius: 10,
     },
+    onClick: action("onClick"),
   },
 };
 
@@ -59,16 +53,7 @@ export const Primary: Story = {
  * Secondary button is important for user interaction
  */
 export const Secondary: Story = {
-  render: (props) => (
-    <Button
-      {...props}
-      onClick={(): void => {
-        console.log("Hello from secondary!");
-      }}
-    >
-      {props.children}
-    </Button>
-  ),
+  render: (props) => <Button {...props}>{props.children}</Button>,
   name: "Secondary",
   args: {
     children: "Hello",
@@ -80,5 +65,6 @@ export const Secondary: Story = {
       padding: 10,
       borderRadius: 10,
     },
+    onClick: action("onClick"),
   },
 };

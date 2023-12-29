@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Input } from "@msyaifullah/input";
+import { action } from "@storybook/addon-actions";
 
 const meta: Meta<typeof Input> = {
   title: "Components/Input",
@@ -14,6 +15,8 @@ const meta: Meta<typeof Input> = {
       control: { type: "radio" },
       options: ["small", "medium", "large"],
     },
+    onChange: { description: "input action onChange", action: "onChange" },
+    onFocus: { description: "input action onFocus", action: "onFocus" },
   },
 };
 
@@ -39,5 +42,7 @@ export const Primary: Story = {
       padding: 10,
       borderRadius: 10,
     },
+    onChange: action("onChange"),
+    onFocus: action("onFocus"),
   },
 };

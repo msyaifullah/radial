@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "storybook dev -p 6006",
+    "dev": "storybook dev -s ./public -p 6006",
     "build": "storybook build --docs",
     "deploy": "",
     "preview-storybook": "serve storybook-static",
@@ -17,6 +17,7 @@
     "@msyaifullah/hooks": "workspace:*",
     "@msyaifullah/input": "workspace:*",
     "@msyaifullah/themes": "workspace:*",
+    "@msyaifullah/threej": "workspace:*",
     "@msyaifullah/ui": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

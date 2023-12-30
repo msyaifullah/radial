@@ -1,0 +1,41 @@
+{
+  "name": "@msyaifullah/threej",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "eslint src/",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msyaifullah/radial.git"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "@types/three": "^0.160.0",
+    "eslint-config-custom": "workspace:*",
+    "react": "^18.1.0",
+    "tsconfig": "workspace:*",
+    "tsup": "^5.10.1",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.92.7",
+    "@react-three/fiber": "^8.15.12",
+    "three": "^0.160.0"
+  }
+}

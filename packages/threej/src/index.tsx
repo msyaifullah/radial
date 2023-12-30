@@ -1,44 +1,15 @@
 import * as React from "react";
 import { InputHTMLAttributes } from "react";
 import { Mesh } from "three";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { MeshDistortMaterial, Sphere } from "@react-three/drei";
+import MeshComponent from "./meshone";
+import MeshComponent2 from "./meshtwo";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   variant?: "small" | "medium" | "large";
 }
-
-const MeshComponent = ({ fileUrl }: { fileUrl: string }) => {
-  const mesh = React.useRef<Mesh>(null!);
-  const gltf = useLoader(GLTFLoader, fileUrl);
-
-  useFrame(() => {
-    mesh.current.rotation.y += 0.01;
-  });
-
-  return (
-    <mesh ref={mesh}>
-      <primitive object={gltf.scene} />
-    </mesh>
-  );
-};
-
-const MeshComponent2 = () => {
-  return (
-    <Sphere visible args={[1, 100, 200]} scale={2}>
-      <MeshDistortMaterial
-        color="#8352FD"
-        attach="material"
-        distort={0.3}
-        speed={1.5}
-        roughness={0}
-      />
-    </Sphere>
-  );
-};
 
 const Threej = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
@@ -62,6 +33,7 @@ const Threej = React.forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
+
 Threej.displayName = "Threej";
 
 export { Threej };

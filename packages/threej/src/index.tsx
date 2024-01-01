@@ -7,6 +7,8 @@ import { easing } from "maath";
 import { useSnapshot } from "valtio";
 import { useFrame } from "@react-three/fiber";
 
+import './styles.css'
+
 import { proxy } from "valtio";
 
 import {
@@ -128,6 +130,61 @@ function CameraRig({ children }: CameraRigProps) {
   return <group ref={group}>{children}</group>;
 }
 
+function Customizer() {
+  const snap = useSnapshot(state);
+  return (
+    <div className="customizer">
+      <div className="color-options">        
+        {snap.colors.map((color: string) => (
+          <div
+            key={color}
+            className={`circle`}
+            style={{ background: color }}
+            onClick={() => (state.color = color)}
+          >{color}</div>
+        ))}
+      </div>
+      <div className="decals">
+        <div className="decals--container">
+          {snap.decals.map((decal: string) => (
+            <div
+              key={decal}
+              className={`decal`}
+              onClick={() => (state.decal = decal)}
+            >
+              <img src={"/3d/tshirt/"+decal + "_thumb.png"} alt="brand" />
+            </div>
+          ))}
+        </div>
+      </div>
+      <button
+        className="share"
+        style={{ background: snap.color }}
+        onClick={() => {
+          const link = document.createElement("a");
+          link.setAttribute("download", "canvas.png");
+          link.setAttribute(
+            "href",
+            (document.querySelector("canvas") as HTMLCanvasElement)!
+              .toDataURL("image/png")
+              .replace("image/png", "image/octet-stream")
+          );
+          link.click();
+        }}
+      >
+        DOWNLOAD
+      </button>
+      <button
+        className="exit"
+        style={{ background: snap.color }}
+        onClick={() => (state.intro = true)}
+      >
+        GO BACK
+      </button>
+    </div>
+  );
+}
+
 const Threej = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (
@@ -147,25 +204,28 @@ const Threej = React.forwardRef<HTMLInputElement, InputProps>(
           </React.Suspense>
         </Canvas> */}
 
-        <Canvas
-          style={{ height: "50dvh", width: "100%" }}
-          shadows
-          camera={{ position: [0, 0, 2.5], fov: 25 }}
-          gl={{ preserveDrawingBuffer: true }}
-          eventSource={document.getElementById("root") || undefined}
-          eventPrefix="client"
-        >
-          <React.Suspense fallback={null}>
-            <ambientLight intensity={0.5} />
-            <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/potsdamer_platz_1k.hdr" />
-            <CameraRig>
-              <Backdrop />
-              <Center>
-                <Shirt />
-              </Center>
-            </CameraRig>
-          </React.Suspense>
-        </Canvas>
+        <>
+          <Canvas
+            style={{ height: "50dvh", width: "100%" }}
+            shadows
+            camera={{ position: [0, 0, 2.5], fov: 25 }}
+            gl={{ preserveDrawingBuffer: true }}
+            eventSource={document.getElementById("root") || undefined}
+            eventPrefix="client"
+          >
+            <React.Suspense fallback={null}>
+              <ambientLight intensity={0.5} />
+              <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/potsdamer_platz_1k.hdr" />
+              <CameraRig>
+                <Backdrop />
+                <Center>
+                  <Shirt />
+                </Center>
+              </CameraRig>
+            </React.Suspense>
+          </Canvas>
+          <Customizer />
+        </>
       </>
     );
   }

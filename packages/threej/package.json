@@ -36,6 +36,8 @@
   "dependencies": {
     "@react-three/drei": "^9.92.7",
     "@react-three/fiber": "^8.15.12",
-    "three": "^0.160.0"
+    "maath": "^0.10.7",
+    "three": "^0.160.0",
+    "valtio": "^1.12.1"
   }
 }

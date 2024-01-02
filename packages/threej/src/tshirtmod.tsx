@@ -11,6 +11,7 @@ import {
   AccumulativeShadows,
   RandomizedLight,
   Decal,
+  Text
 } from "@react-three/drei";
 
 export const state = proxy({
@@ -48,6 +49,12 @@ export const Shirt = (props: ShirtProps) => {
                 scale={0.15}
                 map={texture}
             />
+            <Decal
+                position={[0, 0.04, -0.1]}
+                rotation={[0, 0, 0]}
+                scale={0.15}
+                map={texture}
+            />          
         </mesh>
     );
 }

@@ -20,7 +20,7 @@ const Threej = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (
       <>
-        <Canvas>
+        {/* <Canvas>
           <pointLight position={new Vector3(10, 10, 10)} />
           <OrbitControls />
           <React.Suspense fallback={null}>
@@ -33,7 +33,7 @@ const Threej = React.forwardRef<HTMLInputElement, InputProps>(
             <directionalLight position={new Vector3(-2, 5, 2)} />
             <MeshComponent2 />
           </React.Suspense>
-        </Canvas>
+        </Canvas> */}
 
         <>
           <Canvas
